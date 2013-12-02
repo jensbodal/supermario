@@ -70,7 +70,7 @@ public class Coin extends JPanel {
     private Color Black = new Color (BLACK);
     private Color White = new Color (WHITE);
          */
-        for (int line = 1; line < COIN_HEIGHT; line++) {
+        for (int line = 1; line <= COIN_HEIGHT; line++) {
             System.out.println(line);
             if (line == 1) {
                 drawLine(Black, 3, HORIZONTAL, 6, line);
@@ -127,18 +127,22 @@ public class Coin extends JPanel {
             if (line == 13) {
                 drawLine(Light_Gold, 1, HORIZONTAL, 5, line);
                 drawLine(Black, 2, HORIZONTAL, 6, line);
+                drawLine(Light_Gold, 1, HORIZONTAL, 8, line);
                 drawLine(Gold, 1, HORIZONTAL, 9, line);
                 drawLine(Dark_Gold, 2, VERTICAL, 10, line);
                 drawLine(Black, 2, VERTICAL, 11, line);
             }
             if (line == 14) {
-
+                drawLine(Gold, 5, HORIZONTAL, 4, line);
+                drawLine(Dark_Gold, 1, HORIZONTAL, 9, line);
             }
             if (line == 15) {
-                
+                drawLine(Black, 2, HORIZONTAL, 3, line);
+                drawLine(Dark_Gold, 4, HORIZONTAL, 5, line);
+                drawLine(Black, 2, HORIZONTAL, 9, line);
             }
             if (line == 16) {
-                
+                drawLine(Black, 4, HORIZONTAL, 5, line);
             }
         } // end for
     } // end drawCoin
