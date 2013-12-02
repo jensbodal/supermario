@@ -5,6 +5,7 @@
 
 package supermario;
 import javax.swing.*;
+import java.awt.*;
 
 /**
  *
@@ -23,12 +24,17 @@ public class Supermario {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setSize(400,400);
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout());
+        panel.setOpaque(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        Coin coin = new Coin();
-        frame.add(coin);
-        frame.add(coin);
-        
+        Coin coin = new Coin(150,1);
+        Coin coin2 = new Coin(1,1);
+        Coin coin3 = new Coin(1,1);
+        panel.add(coin);
+        panel.add(coin2);
+        panel.add(coin3);
+        frame.add(panel);
         frame.setVisible(true);
         
     }

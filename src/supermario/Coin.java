@@ -12,35 +12,46 @@ import javax.swing.*;
  * Date Day, Year Initials Completed v#
  */
 
-public class Coin extends JPanel {
+public class Coin extends JComponent {
     private static final int COIN_HEIGHT = 16;
     private static final boolean HORIZONTAL = true;
     private static final boolean VERTICAL = false;
-    private int pixelSize = 3;
-    private int xPos = 10;
+    private int pixelSize = 1;
+    private int xPos = 1;
     
     //Coin Colors
     private int LIGHT_GOLD = 0xF6E823;
     private int GOLD = 0xFAB511;
     private int DARK_GOLD = 0x845813;
     private int BLACK = 0x1D1D1B;
-    private int WHITE = 0xFFFFFF;
     private Color Light_Gold = new Color (LIGHT_GOLD);
     private Color Gold = new Color (GOLD);
     private Color Dark_Gold = new Color (DARK_GOLD);
     private Color Black = new Color (BLACK);
-    private Color White = new Color (WHITE);
     private Graphics2D g2;
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        setBackground(White);
+        setOpaque(false);
         g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(pixelSize));
         drawCoin(g);
     }
     
+    public Coin() {
+        
+    }
+    
+    public Coin(int position, int size) {
+        try {
+            if (position < 0 || size < 0) {throw new IllegalArgumentException(
+                "Coin constructor values must be greater than 0");}
+        }
+        catch (IllegalArgumentException e) {System.out.println(e);}
+        xPos = Math.abs(position);        
+        pixelSize = Math.abs(size);
+    }
     private void drawLine(
             Color color, int length, boolean type, int x, int y) {
         g2.setColor(color);
@@ -56,7 +67,6 @@ public class Coin extends JPanel {
     
     private void drawCoin(Graphics g2) {
         for (int line = xPos; line <= COIN_HEIGHT+xPos; line++) {
-            System.out.println(line);
             if (line == xPos) {
                 drawLine(Black, 3, HORIZONTAL, xPos+5, line);
             }
