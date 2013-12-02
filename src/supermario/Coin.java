@@ -16,7 +16,8 @@ public class Coin extends JPanel {
     private static final int COIN_HEIGHT = 16;
     private static final boolean HORIZONTAL = true;
     private static final boolean VERTICAL = false;
-    private int pixelSize = 16;
+    private int pixelSize = 3;
+    private int xPos = 10;
     
     //Coin Colors
     private int LIGHT_GOLD = 0xF6E823;
@@ -54,79 +55,79 @@ public class Coin extends JPanel {
     }
     
     private void drawCoin(Graphics g2) {
-        for (int line = 1; line <= COIN_HEIGHT; line++) {
+        for (int line = xPos; line <= COIN_HEIGHT+xPos; line++) {
             System.out.println(line);
-            if (line == 1) {
-                drawLine(Black, 3, HORIZONTAL, 6, line);
+            if (line == xPos) {
+                drawLine(Black, 3, HORIZONTAL, xPos+5, line);
             }
-            if (line == 2) {
-                drawLine(Black, 2, HORIZONTAL, 4, line);
-                drawLine(Black, 3, HORIZONTAL, 8, line);
+            if (line == xPos+1) {
+                drawLine(Black, 2, HORIZONTAL, xPos+3, line);
+                drawLine(Black, 3, HORIZONTAL, xPos+7, line);
             }
-            if (line == 3) {
-                drawLine(Black, 1, HORIZONTAL, 3, line);
-                drawLine(Black, 2, VERTICAL, 11, line);
-                drawLine(Gold, 5, HORIZONTAL, 5, line);
-                drawLine(Dark_Gold, 2, VERTICAL, 10, line);
+            if (line == xPos+2) {
+                drawLine(Black, 1, HORIZONTAL, xPos+2, line);
+                drawLine(Black, 2, VERTICAL, xPos+10, line);
+                drawLine(Gold, 5, HORIZONTAL, xPos+4, line);
+                drawLine(Dark_Gold, 2, VERTICAL, xPos+9, line);
             }
-            if (line == 4) {
-                drawLine(Black, 2, VERTICAL, 2, line);
-                drawLine(Gold, 1, HORIZONTAL, 4, line);
-                drawLine(Light_Gold, 1, HORIZONTAL, 5, line);
-                drawLine(Light_Gold, 1, HORIZONTAL, 8, line);
-                drawLine(Gold, 1, HORIZONTAL, 9, line);
+            if (line == xPos+3) {
+                drawLine(Black, 2, VERTICAL, xPos+1, line);
+                drawLine(Gold, 1, HORIZONTAL, xPos+3, line);
+                drawLine(Light_Gold, 1, HORIZONTAL, xPos+4, line);
+                drawLine(Light_Gold, 1, HORIZONTAL, xPos+7, line);
+                drawLine(Gold, 1, HORIZONTAL, xPos+8, line);
             }
-            if (line == 5) {
-                drawLine(Gold, 10, VERTICAL, 3, line);
-                drawLine(Light_Gold, 9, VERTICAL, 4, line);
-                drawLine(Light_Gold, 6, VERTICAL, 6, line);
-                drawLine(Gold, 8, VERTICAL, 7, line);
-                drawLine(Black, 8, VERTICAL, 8, line);
-                drawLine(Light_Gold, 8, VERTICAL, 9, line);
-                drawLine(Gold, 8, VERTICAL, 10, line);
-                drawLine(Dark_Gold, 8, VERTICAL, 11, line);
-                drawLine(Black, 8, VERTICAL, 12, line);
+            if (line == xPos+4) {
+                drawLine(Gold, 10, VERTICAL, xPos+2, line);
+                drawLine(Light_Gold, 9, VERTICAL, xPos+3, line);
+                drawLine(Light_Gold, 6, VERTICAL, xPos+5, line);
+                drawLine(Gold, 8, VERTICAL, xPos+6, line);
+                drawLine(Black, 8, VERTICAL, xPos+7, line);
+                drawLine(Light_Gold, 8, VERTICAL, xPos+8, line);
+                drawLine(Gold, 8, VERTICAL, xPos+9, line);
+                drawLine(Dark_Gold, 8, VERTICAL, xPos+10, line);
+                drawLine(Black, 8, VERTICAL, xPos+11, line);
             }
-            if (line == 6) {
-                drawLine(Black, 6, VERTICAL, 1, line);
+            if (line == xPos+5) {
+                drawLine(Black, 6, VERTICAL, xPos, line);
             }
-            if (line == 7) {
+            if (line == xPos+6) {
                 // No lines begin at 7
             }
-            if (line == 8) {
+            if (line == xPos+7) {
                 // No lines begin at 8
             }
-            if (line == 9) {
+            if (line == xPos+8) {
                 // No lines begin at 9
             }
-            if (line == 10) {
+            if (line == xPos+9) {
                 // No lines begin at 10
             }
-            if (line == 11) {
-                drawLine(Gold, 2, VERTICAL, 6, line);
+            if (line == xPos+10) {
+                drawLine(Gold, 2, VERTICAL, xPos+5, line);
             }
-            if (line == 12) {
-                drawLine(Black, 3, VERTICAL, 2, line);
+            if (line == xPos+11) {
+                drawLine(Black, 3, VERTICAL, xPos+1, line);
             }
-            if (line == 13) {
-                drawLine(Light_Gold, 1, HORIZONTAL, 5, line);
-                drawLine(Black, 2, HORIZONTAL, 6, line);
-                drawLine(Light_Gold, 1, HORIZONTAL, 8, line);
-                drawLine(Gold, 1, HORIZONTAL, 9, line);
-                drawLine(Dark_Gold, 2, VERTICAL, 10, line);
-                drawLine(Black, 2, VERTICAL, 11, line);
+            if (line == xPos+12) {
+                drawLine(Light_Gold, 1, HORIZONTAL, xPos+4, line);
+                drawLine(Black, 2, HORIZONTAL, xPos+5, line);
+                drawLine(Light_Gold, 1, HORIZONTAL, xPos+7, line);
+                drawLine(Gold, 1, HORIZONTAL, xPos+8, line);
+                drawLine(Dark_Gold, 2, VERTICAL, xPos+9, line);
+                drawLine(Black, 2, VERTICAL, xPos+10, line);
             }
-            if (line == 14) {
-                drawLine(Gold, 5, HORIZONTAL, 4, line);
-                drawLine(Dark_Gold, 1, HORIZONTAL, 9, line);
+            if (line == xPos+13) {
+                drawLine(Gold, 5, HORIZONTAL, xPos+3, line);
+                drawLine(Dark_Gold, 1, HORIZONTAL, xPos+8, line);
             }
-            if (line == 15) {
-                drawLine(Black, 2, HORIZONTAL, 3, line);
-                drawLine(Dark_Gold, 4, HORIZONTAL, 5, line);
-                drawLine(Black, 2, HORIZONTAL, 9, line);
+            if (line == xPos+14) {
+                drawLine(Black, 2, HORIZONTAL, xPos+2, line);
+                drawLine(Dark_Gold, 4, HORIZONTAL, xPos+4, line);
+                drawLine(Black, 2, HORIZONTAL, xPos+8, line);
             }
-            if (line == 16) {
-                drawLine(Black, 4, HORIZONTAL, 5, line);
+            if (line == xPos+15) {
+                drawLine(Black, 4, HORIZONTAL, xPos+4, line);
             }
         } // end for
     } // end drawCoin
