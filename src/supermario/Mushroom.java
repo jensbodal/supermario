@@ -16,6 +16,9 @@ package supermario;
  */
 
 public class Mushroom {
-
+    //Mushroom Colors
+    private int BLACK = 0x000000;
+    private int GREEN = 0x21AA52;
+    private int WHITE = 0xFFFFFF;
 }
 

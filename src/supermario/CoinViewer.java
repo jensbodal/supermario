@@ -5,6 +5,8 @@
 
 package supermario;
 
+import javax.swing.JFrame;
+
 /**
  * 
  * @author jensbodal
@@ -16,6 +18,8 @@ package supermario;
  */
 
 public class CoinViewer {
+    public CoinViewer() {
 
+    }
 }
 
