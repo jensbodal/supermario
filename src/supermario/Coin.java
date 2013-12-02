@@ -1,13 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package supermario;
 import java.awt.*;
 import javax.swing.*;
-import java.awt.geom.*;
-import java.awt.image.BufferedImage;
 
 /**
  * 
@@ -20,7 +13,6 @@ import java.awt.image.BufferedImage;
  */
 
 public class Coin extends JPanel {
-    private static final int COIN_WIDTH = 40;
     private static final int COIN_HEIGHT = 16;
     private static final boolean HORIZONTAL = true;
     private static final boolean VERTICAL = false;
@@ -62,14 +54,6 @@ public class Coin extends JPanel {
     }
     
     private void drawCoin(Graphics g2) {
-        // color, length, horizontal, startX, startY
-        /* 
-         *     private Color Light_Gold = new Color (LIGHT_GOLD);
-    private Color Gold = new Color (GOLD);
-    private Color Dark_Gold = new Color (DARK_GOLD);
-    private Color Black = new Color (BLACK);
-    private Color White = new Color (WHITE);
-         */
         for (int line = 1; line <= COIN_HEIGHT; line++) {
             System.out.println(line);
             if (line == 1) {
@@ -146,27 +130,5 @@ public class Coin extends JPanel {
             }
         } // end for
     } // end drawCoin
-    
-    private void drawLight_Gold(Graphics g2) {
-        g2.setColor(Light_Gold);
-        int i = 4;
-        g2.drawLine(5*pixelSize, i*pixelSize, 5*pixelSize, i*pixelSize);
-    }
-    
-    private void drawGold(Graphics g2) {
-        g2.setColor(Gold);
-        int i = 3;
-        g2.drawLine(5*pixelSize, i*pixelSize, 9*pixelSize, i*pixelSize);
-        i++;
-    }
-    
-    private void drawDark_Gold(Graphics g2) {
-        g2.setColor(Dark_Gold);
-        int i = 3;
-        g2.drawLine(10*pixelSize, i*pixelSize, 10*pixelSize, (i+=1)*pixelSize);
-    }
-
-
-    
-}
+ }
 
