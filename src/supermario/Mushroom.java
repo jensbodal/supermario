@@ -40,7 +40,7 @@ public class Mushroom extends JPanel {
         g2.setStroke(new BasicStroke(pixelSize));        
         this.setOpaque(false);        
         this.setPreferredSize(new Dimension(MUSHROOM_WIDTH*pixelSize,
-                (MUSHROOM_HEIGHT*pixelSize)+(pixelSize/2)));
+                (MUSHROOM_HEIGHT*pixelSize)+(pixelSize/2)+1));
         this.setSize(getPreferredSize());
         this.revalidate();
         drawMushroom(g);
