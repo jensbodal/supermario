@@ -12,12 +12,12 @@ import javax.swing.*;
  * Date Day, Year Initials Completed v#
  */
 
-public class Coin extends JComponent {
+public class Coin extends JPanel {
     private static final int COIN_HEIGHT = 16;
     private static final boolean HORIZONTAL = true;
     private static final boolean VERTICAL = false;
+    private static final int xPos = 1;
     private int pixelSize = 1;
-    private int xPos = 1;
     
     //Coin Colors
     private int LIGHT_GOLD = 0xF6E823;
@@ -51,6 +51,7 @@ public class Coin extends JComponent {
         catch (IllegalArgumentException e) {System.out.println(e);}        
         pixelSize = Math.abs(size);
     }
+    
     private void drawLine(
             Color color, int length, boolean type, int x, int y) {
         g2.setColor(color);

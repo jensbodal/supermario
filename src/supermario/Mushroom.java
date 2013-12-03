@@ -12,7 +12,7 @@ import javax.swing.*;
  * Date Day, Year Initials Completed v#
  */
 
-public class Mushroom extends JComponent {
+public class Mushroom extends JPanel {
 
 
     private static final int MUSHROOM_HEIGHT = 17;
