@@ -23,9 +23,8 @@ public class Supermario {
      */
     public static void main(String[] args) {
         JFrame frame = new JFrame();
-        frame.setLayout(new FlowLayout());
-        frame.setSize(new Dimension(800,600));
-        frame.setBackground(Color.blue);
+        frame.setLayout(new FlowLayout(FlowLayout.LEFT));
+        frame.setSize(800,600);
         frame.getContentPane().setBackground(Color.blue);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -39,7 +38,6 @@ public class Supermario {
         frame.add(coin3);
         frame.add(mushroom);
         frame.setVisible(true);
-        
     }
 
 }

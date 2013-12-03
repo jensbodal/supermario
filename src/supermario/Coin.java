@@ -36,12 +36,13 @@ public class Coin extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);  
-        super.setOpaque(false);
         g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(pixelSize));
-        setPreferredSize(new Dimension(
+        this.setOpaque(false);
+        this.setPreferredSize(new Dimension(
                 COIN_WIDTH*pixelSize,(COIN_HEIGHT*pixelSize)+(pixelSize/2)));
-        setSize(getPreferredSize());
+        this.setSize(getPreferredSize());
+        this.revalidate();
         drawCoin(g);
     }
     

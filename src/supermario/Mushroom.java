@@ -36,12 +36,13 @@ public class Mushroom extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        setOpaque(false);        
-        setPreferredSize(new Dimension(MUSHROOM_WIDTH*pixelSize,
-                (MUSHROOM_HEIGHT*pixelSize)+(pixelSize/2)));
-        setSize(getPreferredSize());
         g2 = (Graphics2D) g;        
-        g2.setStroke(new BasicStroke(pixelSize));
+        g2.setStroke(new BasicStroke(pixelSize));        
+        this.setOpaque(false);        
+        this.setPreferredSize(new Dimension(MUSHROOM_WIDTH*pixelSize,
+                (MUSHROOM_HEIGHT*pixelSize)+(pixelSize/2)));
+        this.setSize(getPreferredSize());
+        this.revalidate();
         drawMushroom(g);
     }
     
