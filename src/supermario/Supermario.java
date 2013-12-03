@@ -28,12 +28,10 @@ public class Supermario {
         panel.setLayout(new GridLayout());
         panel.setOpaque(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Coin coin = new Coin(150,1);
-        Coin coin2 = new Coin(1,1);
-        Coin coin3 = new Coin(1,1);
+        Coin coin = new Coin(10);
+        Mushroom mushroom = new Mushroom(10);
         panel.add(coin);
-        panel.add(coin2);
-        panel.add(coin3);
+        panel.add(mushroom);
         frame.add(panel);
         frame.setVisible(true);
         

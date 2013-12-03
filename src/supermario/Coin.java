@@ -43,13 +43,12 @@ public class Coin extends JComponent {
         
     }
     
-    public Coin(int position, int size) {
+    public Coin(int size) {
         try {
-            if (position < 0 || size < 0) {throw new IllegalArgumentException(
+            if (size < 0) {throw new IllegalArgumentException(
                 "Coin constructor values must be greater than 0");}
         }
-        catch (IllegalArgumentException e) {System.out.println(e);}
-        xPos = Math.abs(position);        
+        catch (IllegalArgumentException e) {System.out.println(e);}        
         pixelSize = Math.abs(size);
     }
     private void drawLine(
