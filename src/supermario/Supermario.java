@@ -24,7 +24,7 @@ public class Supermario {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setLayout(new FlowLayout(FlowLayout.LEFT));
-        frame.setSize(220,90);
+        frame.setSize(240,100);
         //frame.setBackground(Color.blue);
         frame.getContentPane().setBackground(Color.white);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
