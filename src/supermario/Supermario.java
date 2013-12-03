@@ -23,16 +23,21 @@ public class Supermario {
      */
     public static void main(String[] args) {
         JFrame frame = new JFrame();
-        frame.setSize(400,400);
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout());
-        panel.setOpaque(false);
+        frame.setLayout(new FlowLayout());
+        frame.setSize(new Dimension(800,600));
+        frame.setBackground(Color.blue);
+        frame.getContentPane().setBackground(Color.blue);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Coin coin = new Coin(10);
+
+        Coin coin1 = new Coin(2);
+        Coin coin2 = new Coin(5);
+        Coin coin3 = new Coin(15);
         Mushroom mushroom = new Mushroom(10);
-        panel.add(coin);
-        panel.add(mushroom);
-        frame.add(panel);
+
+        frame.add(coin1);
+        frame.add(coin2);
+        frame.add(coin3);
+        frame.add(mushroom);
         frame.setVisible(true);
         
     }

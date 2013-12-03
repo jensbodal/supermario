@@ -14,6 +14,7 @@ import javax.swing.*;
 
 public class Coin extends JPanel {
     private static final int COIN_HEIGHT = 16;
+    private static final int COIN_WIDTH = 13;
     private static final boolean HORIZONTAL = true;
     private static final boolean VERTICAL = false;
     private static final int xPos = 1;
@@ -24,23 +25,28 @@ public class Coin extends JPanel {
     private int GOLD = 0xFAB511;
     private int DARK_GOLD = 0x845813;
     private int BLACK = 0x1D1D1B;
+    private int WHITE = 0xFFFFFF;
     private Color Light_Gold = new Color (LIGHT_GOLD);
     private Color Gold = new Color (GOLD);
     private Color Dark_Gold = new Color (DARK_GOLD);
     private Color Black = new Color (BLACK);
+    private Color White = new Color (WHITE);
     private Graphics2D g2;
 
     @Override
     public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        setOpaque(false);
+        super.paintComponent(g);  
+        super.setOpaque(false);
         g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(pixelSize));
+        setPreferredSize(new Dimension(
+                COIN_WIDTH*pixelSize,(COIN_HEIGHT*pixelSize)+(pixelSize/2)));
+        setSize(getPreferredSize());
         drawCoin(g);
     }
     
     public Coin() {
-        
+
     }
     
     public Coin(int size) {
@@ -72,24 +78,29 @@ public class Coin extends JPanel {
             }
             if (line == xPos+1) {
                 drawLine(Black, 2, HORIZONTAL, xPos+3, line);
+                drawLine(White, 2, HORIZONTAL, xPos+5, line);
                 drawLine(Black, 3, HORIZONTAL, xPos+7, line);
             }
             if (line == xPos+2) {
                 drawLine(Black, 1, HORIZONTAL, xPos+2, line);
+                drawLine(White, 1, HORIZONTAL, xPos+3, line);
                 drawLine(Black, 2, VERTICAL, xPos+10, line);
                 drawLine(Gold, 5, HORIZONTAL, xPos+4, line);
                 drawLine(Dark_Gold, 2, VERTICAL, xPos+9, line);
             }
             if (line == xPos+3) {
                 drawLine(Black, 2, VERTICAL, xPos+1, line);
+                drawLine(White, 1, HORIZONTAL, xPos+2, line);
                 drawLine(Gold, 1, HORIZONTAL, xPos+3, line);
                 drawLine(Light_Gold, 1, HORIZONTAL, xPos+4, line);
+                drawLine(White, 2, HORIZONTAL, xPos+5, line);
                 drawLine(Light_Gold, 1, HORIZONTAL, xPos+7, line);
                 drawLine(Gold, 1, HORIZONTAL, xPos+8, line);
             }
             if (line == xPos+4) {
                 drawLine(Gold, 10, VERTICAL, xPos+2, line);
                 drawLine(Light_Gold, 9, VERTICAL, xPos+3, line);
+                drawLine(White, 8, VERTICAL, xPos+4, line);
                 drawLine(Light_Gold, 6, VERTICAL, xPos+5, line);
                 drawLine(Gold, 8, VERTICAL, xPos+6, line);
                 drawLine(Black, 8, VERTICAL, xPos+7, line);
@@ -100,6 +111,7 @@ public class Coin extends JPanel {
             }
             if (line == xPos+5) {
                 drawLine(Black, 6, VERTICAL, xPos, line);
+                drawLine(White, 6, VERTICAL, xPos+1, line);
             }
             if (line == xPos+6) {
                 // No lines begin at 7

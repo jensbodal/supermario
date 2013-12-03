@@ -16,6 +16,7 @@ public class Mushroom extends JPanel {
 
 
     private static final int MUSHROOM_HEIGHT = 17;
+    private static final int MUSHROOM_WIDTH = 17;
     private static final boolean HORIZONTAL = true;
     private static final boolean VERTICAL = false;
     private int pixelSize = 1;
@@ -30,11 +31,16 @@ public class Mushroom extends JPanel {
     private Color White = new Color (WHITE);
     private Graphics2D g2;
 
+    
+    
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        setOpaque(false);
-        g2 = (Graphics2D) g;
+        setOpaque(false);        
+        setPreferredSize(new Dimension(MUSHROOM_WIDTH*pixelSize,
+                (MUSHROOM_HEIGHT*pixelSize)+(pixelSize/2)));
+        setSize(getPreferredSize());
+        g2 = (Graphics2D) g;        
         g2.setStroke(new BasicStroke(pixelSize));
         drawMushroom(g);
     }
