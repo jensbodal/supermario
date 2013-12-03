@@ -1,4 +1,4 @@
 supermario
 ==========
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.jpg)

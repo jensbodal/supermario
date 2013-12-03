@@ -26,7 +26,7 @@ public class Supermario {
         frame.setLayout(new FlowLayout(FlowLayout.LEFT));
         frame.setSize(220,90);
         //frame.setBackground(Color.blue);
-        frame.getContentPane().setBackground(Color.blue);
+        frame.getContentPane().setBackground(Color.white);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Coin coin1 = new Coin(1);
