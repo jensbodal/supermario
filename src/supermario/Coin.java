@@ -40,7 +40,7 @@ public class Coin extends JPanel {
         g2.setStroke(new BasicStroke(pixelSize));
         this.setOpaque(false);
         this.setPreferredSize(new Dimension(
-                COIN_WIDTH*pixelSize,(COIN_HEIGHT*pixelSize)+(pixelSize/2)));
+                COIN_WIDTH*pixelSize,(COIN_HEIGHT*pixelSize)+(pixelSize/2)+1));
         this.setSize(getPreferredSize());
         this.revalidate();
         drawCoin(g);
