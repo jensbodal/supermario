@@ -3,7 +3,8 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * 
+ * The Coin class creates a JPanel component which stores a graphic 
+ * that looks like a Mushroom from Super Mario
  * @author jensbodal
  * @version 1.0
  * 
@@ -33,6 +34,12 @@ public class Coin extends JPanel {
     private Color White = new Color (WHITE);
     private Graphics2D g2;
 
+    /**
+     * Sets default settings for JPanel which stores the coin graphic.  The
+     * height and width are calculated based on the constant value for 
+     * pixelsize which essentially determines the overall size of the graphic.
+     * @param g paint component used to draw graphics
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);  
@@ -46,10 +53,19 @@ public class Coin extends JPanel {
         drawCoin(g);
     }
     
+    /**
+     * Default constructor which creates a coin of pixelSize 1
+     */
     public Coin() {
 
     }
     
+    /**
+     * Constructor which can take in an int value for pixelSize to create
+     * a larger coin
+     * @param size int value which will be used to set the constant value for
+     * pixelSize
+     */
     public Coin(int size) {
         try {
             if (size < 0) {throw new IllegalArgumentException(
@@ -59,6 +75,19 @@ public class Coin extends JPanel {
         pixelSize = Math.abs(size);
     }
     
+    /**
+     * Custom draw method which is used to draw the graphic.  Allows lines
+     * to be created based on color, length (based on {@code pixelSize},
+     * direction {@code HORIZONTAL / LITERAL}, and its starting x and y
+     * positions.
+     * @param color takes in Color object to draw a line of that color
+     * @param length takes in integer value which then determines the length
+     * of the line based on {@code pixelSize}
+     * @param type boolean value expects {@code HORIZONTAL} or {@code VERTICAL};
+     * {@code HORIZONTAL = true} and {@code VERTICAL = false}
+     * @param x starting x position for line
+     * @param y starting y position for line
+     */
     private void drawLine(
             Color color, int length, boolean type, int x, int y) {
         g2.setColor(color);
@@ -72,6 +101,12 @@ public class Coin extends JPanel {
         }
     }
     
+    /**
+     * Plotted points for drawing the coin are based on a pixel map of the 
+     * actual drawing.  Dynamically will draw the Coin object based on the
+     * {@code pixelSize}
+     * @param g2 takes in the graphics object being used to draw the object
+     */
     private void drawCoin(Graphics g2) {
         for (int line = xPos; line <= COIN_HEIGHT+xPos; line++) {
             if (line == xPos) {
